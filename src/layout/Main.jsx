@@ -1,9 +1,11 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
 
 const Main = () => {
     return (
         <>
-        <main>
+        <Navbar />
+        <main className="bg-[#F5F4F2]">
             <Outlet />
         </main>
         </>

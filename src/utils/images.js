@@ -21,6 +21,8 @@ import category20 from "../assets/images/categories/category (20).png";
 import category21 from "../assets/images/categories/category (21).png";
 import category22 from "../assets/images/categories/category (22).png";
 import category23 from "../assets/images/categories/category (23).png";
+import logo from '../assets/images/logo.svg'
+import helios from '../assets/images/helios.png'
 
 export const images = {
   category1,
@@ -46,4 +48,6 @@ export const images = {
   category21,
   category22,
   category23,
+  logo,
+  helios,
 };
