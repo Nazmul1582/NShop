@@ -1,3 +1,4 @@
+import Cart from "./Cart";
 import Category from "./Category";
 import Products from "./Products";
 
@@ -10,7 +11,7 @@ const Home = () => {
           <div className="mb-20">
             <Products />
           </div>
-          <div className="bg-white font-bold rounded-2xl shadow-lg p-3">Cart</div>
+          <Cart />
         </div>
       </div>
     </section>
