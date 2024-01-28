@@ -23,6 +23,8 @@ import category22 from "../assets/images/categories/category (22).png";
 import category23 from "../assets/images/categories/category (23).png";
 import logo from '../assets/images/logo.svg'
 import helios from '../assets/images/helios.png'
+import feedbackIcon from '../assets/images/feedbackIcon.svg'
+import vk from '../assets/images/vk.svg'
 
 export const images = {
   category1,
@@ -50,4 +52,6 @@ export const images = {
   category23,
   logo,
   helios,
+  feedbackIcon,
+  vk,
 };
