@@ -83,37 +83,42 @@ export const categories = [
   },
   {
     id: 17,
-    categoryName: "Nuts and dried fruits",
     image: images.category17,
+    categoryName: "Cereals, pasta",
   },
   {
     id: 18,
-    categoryName: "For animals",
     image: images.category18,
+    categoryName: "Nuts and dried fruits",
   },
   {
     id: 19,
-    categoryName: "Medical products",
     image: images.category19,
+    categoryName: "For animals",
   },
   {
     id: 20,
-    categoryName: "Car accessories",
     image: images.category20,
+    categoryName: "Medical products",
   },
   {
     id: 21,
-    categoryName: "Toys",
     image: images.category21,
+    categoryName: "Car accessories",
   },
   {
     id: 22,
-    categoryName: "Chargers",
     image: images.category22,
+    categoryName: "Toys",
   },
   {
     id: 23,
-    categoryName: "House, cottage, holiday",
     image: images.category23,
+    categoryName: "Chargers",
+  },
+  {
+    id: 24,
+    image: images.category24,
+    categoryName: "House, cottage, holiday",
   },
 ];
