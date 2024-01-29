@@ -54,10 +54,30 @@ const Product = ({ item }) => {
                 <p className="mt-1 text-2xl font-bold mb-3">{item.name}</p>
                 <p className="text-[#9E9B98] text-md my-3">{item.quantity}</p>
                 <div className="flex items-center gap-5">
-                  <p className="text-3xl font-bold">{item.price}</p>
-                  <button className="bg-amber-400 duration-200 px-5 py-2 rounded-2xl font-semibold text-2xl w-fit">
+                  <p className="text-3xl font-bold">{item.price} ₸</p>
+                  {/* <button className="bg-amber-400 duration-200 px-5 py-2 rounded-2xl font-semibold text-2xl w-fit">
                     Add
-                  </button>
+                  </button> */}
+                  {cart?.find((product) => product.id === item.id) ? (
+                    <div className="flex items-center justify-center gap-3 bg-amber-400 px-6 py-3 rounded-2xl font-semibold">
+                      <button onClick={() => handleDecrement(item.id)}>
+                        <FaMinus />
+                      </button>
+                      <span className="mt-[2px]">{cartItem.quant}</span>
+                      <button onClick={() => handleIncrement(item.id)}>
+                        <FaPlus />
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        handleAddToCart(item);
+                      }}
+                      className="bg-amber-400 px-6 py-3 rounded-2xl font-semibold w-full grid place-items-center"
+                    >
+                      <FaPlus />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
