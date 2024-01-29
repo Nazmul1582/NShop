@@ -2,18 +2,14 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import Product from "../../components/Product";
-import { images } from "../../utils/images";
+import { categories } from "../../utils/categories";
 
-const SingleCategory = ({
-  category = {
-    id: 24,
-    image: images.category24,
-    categoryName: "House, cottage, holiday",
-  }
-}) => {
+const SingleCategory = () => {
   const products = useProducts();
-  const categoryId = useParams();
-  console.log(categoryId);
+  const { categoryId } = useParams();
+
+  const category = categories.find((item) => item.id === parseInt(categoryId));
+
   return (
     <div className="mb-20">
       <div className="flex justify-between items-center my-8">

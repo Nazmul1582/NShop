@@ -1,6 +1,7 @@
 import { FaArrowRight, FaRegClock } from "react-icons/fa6";
 import { categories } from "../utils/categories";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -32,17 +33,16 @@ const Category = () => {
       <h2 className="text-xl font-bold mb-6">Category</h2>
       <div className="flex flex-col">
         {categories.map((item) => (
-          <div
-            key={item.id}
-            className="flex items-center gap-5 rounded-xl hover:bg-[#E7E6E4] p-1 cursor-pointer"
-          >
-            <img
-              className="w-10 h-10"
-              src={item.image}
-              alt={item.categoryName}
-            />
-            <p>{item.categoryName}</p>
-          </div>
+          <Link key={item.id} to={`/category/${item.id}`}>
+            <div className="flex items-center gap-5 rounded-xl hover:bg-[#E7E6E4] p-1 cursor-pointer">
+              <img
+                className="w-10 h-10"
+                src={item.image}
+                alt={item.categoryName}
+              />
+              <p>{item.categoryName}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
