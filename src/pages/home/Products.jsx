@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { images } from "../../utils/images";
 import Product from "./Product";
 import { useEffect, useState } from "react";
 import { categories } from "../../utils/categories";

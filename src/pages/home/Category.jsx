@@ -15,7 +15,7 @@ const Category = () => {
         </div>
         <div className="flex gap-2 items-center">
           <FaRegClock />
-          <span>free on first order 1 000 ₸</span>
+          <span>free on first order 1000 ₸</span>
         </div>
         <p>Service fee 149 ₸</p>
         <div className="flex items-center group-hover:text-red-500 duration-200">

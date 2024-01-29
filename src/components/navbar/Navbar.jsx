@@ -12,7 +12,7 @@ const Navbar = () => {
             <Link className="" to="/">
               <img className="w-12 h-12" src={images.logo} alt="logo" />
             </Link>
-            <div className="bg-black w-1 h-12"></div>
+            <div className="bg-black w-[2px] h-12"></div>
             <Link to="/">
               <img className="max-w-60 h-12" src={images.helios} alt="logo" />
             </Link>
