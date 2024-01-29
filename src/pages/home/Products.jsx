@@ -1,15 +1,10 @@
 import { IoIosArrowForward } from "react-icons/io";
-import Product from "./Product";
-import { useEffect, useState } from "react";
+import Product from "../../components/Product";
 import { categories } from "../../utils/categories";
+import useProducts from "../../hooks/useProducts";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("/public/products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  const products = useProducts();
 
   return (
     <div>

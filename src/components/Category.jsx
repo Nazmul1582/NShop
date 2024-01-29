@@ -1,5 +1,5 @@
 import { FaArrowRight, FaRegClock } from "react-icons/fa6";
-import { categories } from "../../utils/categories";
+import { categories } from "../utils/categories";
 import { IoIosArrowForward } from "react-icons/io";
 
 const Category = () => {

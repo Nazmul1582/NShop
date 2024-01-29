@@ -1,4 +1,4 @@
-import { images } from "../../utils/images";
+import { images } from "../utils/images";
 
 const Cart = () => {
   return (
