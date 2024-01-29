@@ -3,16 +3,19 @@ import { images } from "../utils/images";
 import { ProductContext } from "../provider/ProductProvider";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
-
 const Cart = () => {
-  const { cart, setCart } = useContext(ProductContext);
+  const { cart, setCart, handleDecrement, handleIncrement } =
+    useContext(ProductContext);
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-3 max-h-[calc(100vh-120px)] hidden lg:block sticky top-[120px]">
+    <div className="bg-white rounded-2xl shadow-lg p-3 max-h-[calc(100vh-120px)] hidden lg:block sticky top-[120px] overflow-y-scroll">
       <div className="flex justify-between">
         <h2 className="text-2xl px-4 py-2 lg:px-6 lg:py-3 font-bold">Cart</h2>
         {cart.length > 0 && (
-          <button onClick={() => setCart([])} className="bg-[#f8f8f8] hover:bg-[#e9e9e9] px-4 py-2 lg:px-6 lg:py-3 rounded-2xl font-semibold">
+          <button
+            onClick={() => setCart([])}
+            className="bg-[#f8f8f8] hover:bg-[#e9e9e9] px-4 py-2 lg:px-6 lg:py-3 rounded-2xl font-semibold"
+          >
             Clear
           </button>
         )}
@@ -44,9 +47,13 @@ const Cart = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-[#f8f8f8] hover:bg-[#e9e9e9] px-3 py-1 rounded-2xl font-bold">
-                <button><FaMinus /></button>
-                <span className="mt-[2px]">{1}</span>
-                <button><FaPlus /></button>
+                <button onClick={() => handleDecrement(product.id)}>
+                  <FaMinus />
+                </button>
+                <span className="mt-[2px]">{product.quant}</span>
+                <button onClick={() => handleIncrement(product.id)}>
+                  <FaPlus />
+                </button>
               </div>
             </div>
           ))}

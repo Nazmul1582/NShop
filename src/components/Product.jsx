@@ -1,29 +1,46 @@
 import { useContext, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { ProductContext } from "../provider/ProductProvider";
-
+import { FaMinus, FaPlus } from "react-icons/fa6";
 
 const Product = ({ item }) => {
   const [openModal, setOpenModal] = useState(false);
-  const { handleAddToCart } = useContext(ProductContext)
+  const { handleAddToCart, cart, handleIncrement, handleDecrement } =
+    useContext(ProductContext);
+  const cartItem = cart.find((product) => product.id === item.id);
+
   return (
     <>
-      <div        
-        className="p-5 rounded-2xl bg-white shadow-lg"
-      >
+      <div className="p-5 rounded-2xl bg-white shadow-lg">
         <div className="cursor-pointer" onClick={() => setOpenModal(true)}>
-
-        <img
-          src="https://avatars.mds.yandex.net/get-eda/3569651/b272d3b5f10746dfb125abca442a78be/400x400nocrop"
-          alt="product-photo"
+          <img
+            src="https://avatars.mds.yandex.net/get-eda/3569651/b272d3b5f10746dfb125abca442a78be/400x400nocrop"
+            alt="product-photo"
           />
-        <p className="text-3xl font-semibold">{item.price} ₸</p>
-        <p className="mt-1 mb-3">{item.name}</p>
-        <p className="text-[#9E9B98] text-md my-3">{item.quantity}</p>
+          <p className="text-3xl font-semibold">{item.price} ₸</p>
+          <p className="mt-1 mb-3">{item.name}</p>
+          <p className="text-[#9E9B98] text-md my-3">{item.quantity}</p>
+        </div>
+        {cart?.find((product) => product.id === item.id) ? (
+          <div className="flex items-center justify-center gap-3 bg-[#F5F4F2] hover:bg-[#dddcda] duration-200 px-2 py-1 rounded-2xl font-semibold">
+            <button onClick={() => handleDecrement(item.id)}>
+              <FaMinus />
+            </button>
+            <span className="mt-[2px]">{cartItem.quant}</span>
+            <button onClick={() => handleIncrement(item.id)}>
+              <FaPlus />
+            </button>
           </div>
-        <button onClick={() => handleAddToCart(item)} className="bg-[#F5F4F2] hover:bg-[#dddcda] duration-200 px-2 py-1 rounded-2xl font-semibold w-full text-2xl">
-          +
-        </button>
+        ) : (
+          <button
+            onClick={() => {
+              handleAddToCart(item);
+            }}
+            className="bg-[#F5F4F2] hover:bg-[#dddcda] duration-200 px-3 py-2 rounded-2xl font-semibold w-full grid place-items-center"
+          >
+            <FaPlus />
+          </button>
+        )}
       </div>
       {openModal && (
         <div className="fixed z-10 top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
