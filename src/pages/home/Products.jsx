@@ -7,7 +7,7 @@ const Products = () => {
   const products = useProducts();
 
   return (
-    <div>
+    <div className="-mt-8 lg:-mt-0">
       {categories.map((category) => (
         <div key={category.id}>
           <div className="flex justify-between items-center my-8">
@@ -17,7 +17,7 @@ const Products = () => {
                 src={category.image}
                 alt={category.categoryName}
               />
-              <h2 className="text-2xl font-bold">{category.categoryName}</h2>
+              <h2 className="sm:text-2xl text-base font-bold">{category.categoryName}</h2>
             </div>
             <button className="flex items-center gap-1 hover:bg-[#E7E6E4] px-3 py-2 rounded-xl duration-200">
               <span>All</span>

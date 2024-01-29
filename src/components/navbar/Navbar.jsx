@@ -43,7 +43,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* show only small device */}
-          <div className={`${openDropdown ? "flex" : "hidden"} flex-col justify-center gap-6 bg-white absolute top-[73px] right-0 p-6 rounded-lg`}>
+          <div className={`${openDropdown ? "flex" : "hidden"} flex-col justify-center gap-6 bg-white shadow-lg absolute top-[73px] right-0 p-6 rounded-lg`}>
             <div className="flex items-center gap-2 px-3 rounded-2xl border-2 border-[#8a878466]  bg-white">
               <IoSearch className="text-xl lg:text-3xl text-gray-400" />
               <input
