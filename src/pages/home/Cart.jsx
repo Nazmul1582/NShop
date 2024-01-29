@@ -1,4 +1,3 @@
-import React from "react";
 import { images } from "../../utils/images";
 
 const Cart = () => {
@@ -7,8 +6,9 @@ const Cart = () => {
       <h2 className="text-2xl font-bold">Cart</h2>
       <div className="flex flex-col justify-center items-center gap-5 h-full">
         <img src={images.emptyCart} alt="empty cart" />
-        <h2 className="text-2xl font-bold text-center">Your cart is currently
-empty</h2>
+        <h2 className="text-2xl font-bold text-center">
+          Your cart is currently empty
+        </h2>
       </div>
     </div>
   );
